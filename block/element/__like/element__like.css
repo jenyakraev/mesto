@@ -6,7 +6,7 @@
   right: 20px;
   bottom: 30px;
   border: 0;
-  background-image: url(/image/element__like.svg);
+  background-image: url(../../../image/element__like.svg);
   background-color: white;
   cursor: pointer;
 }
@@ -16,6 +16,6 @@
 }
 
 .element__like:active {
-  background-image: url(/image/element__like_active.svg);
+  background-image: url(../../../image/element__like_active.svg);
   opacity: 1;
 }
