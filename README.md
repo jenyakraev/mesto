@@ -10,4 +10,4 @@ HTML, CSS, JavaScript
 
 ## Ссылка на GitHub Pages
 
-[https://jenyakraev.github.io/russian-travel/]
+https://jenyakraev.github.io/mesto/
