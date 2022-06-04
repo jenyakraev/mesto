@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./page/index.css" />
+    <title>Mesto</title>
+  </head>
+  <body class="body">
+    <header class="header">
+      <img class="header__logo" src="/image/header__logo.svg" alt="Логотип" />
+    </header>
+    <main class="content">
+      <section class="profile">
+        <img
+          class="profile__avatar"
+          src="/image/profile__avatar.jpg"
+          alt="Аватар"
+        />
+        <div class="profile__info">
+          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <button class="profile__edit" type="button"></button>
+          <p class="profile__subtitle">Исследователь океана</p>
+        </div>
+        <button class="profile__add" type="button"></button>
+      </section>
+      <section class="elements">
+        <div class="element">
+          <img
+            class="element__image"
+            alt="Калифорния"
+            src="/image/element__image_california.jpg"
+          />
+          <h2 class="element__title">Калифорния</h2>
+          <button class="element__like" type="button"></button>
+        </div>
+        <div class="element">
+          <img
+            class="element__image"
+            alt="Бали"
+            src="/image/element__image_bali.jpg"
+          />
+          <h2 class="element__title">Бали</h2>
+          <button class="element__like" type="button"></button>
+        </div>
+        <div class="element">
+          <img
+            class="element__image"
+            alt="Нью-Йорк"
+            src="/image/element__image_nyc.jpg"
+          />
+          <h2 class="element__title">Нью-Йорк</h2>
+          <button class="element__like" type="button"></button>
+        </div>
+        <div class="element">
+          <img
+            class="element__image"
+            alt="Скандинавия"
+            src="/image/element__image_skandinavia.jpg"
+          />
+          <h2 class="element__title">Скандинавия</h2>
+          <button class="element__like" type="button"></button>
+        </div>
+        <div class="element">
+          <img
+            class="element__image"
+            alt="Тенерифе"
+            src="/image/element__image_tenerife.jpg"
+          />
+          <h2 class="element__title">Тенерифе</h2>
+          <button class="element__like" type="button"></button>
+        </div>
+        <div class="element">
+          <img
+            class="element__image"
+            alt="Шри-Ланка"
+            src="/image/element__image_sri-lanka.jpg"
+          />
+          <h2 class="element__title">Шри-Ланка</h2>
+          <button class="element__like" type="button"></button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
+    </footer>
+    <div class="popap">
+      <div class="popap__container">
+        <button class="popap__close-button" type="button"></button>
+        <form class="popap__form" id="form__edit" name="form__edit">
+          <h3 class="popap__header">Редактировать профиль</h3>
+          <input
+            class="popap__title"
+            type="text"
+            id="edit__title"
+            name="title"
+            value=""
+          />
+          <input
+            class="popap__subtitle"
+            type="text"
+            id="edit__subtitle"
+            name="subtitle"
+            value=""
+          />
+          <button class="popap__save-button" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <script src="./page/index.js"></script>
+  </body>
+</html>

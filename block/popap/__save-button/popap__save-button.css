@@ -1,0 +1,25 @@
+.popap__save-button {
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: black;
+  border-radius: 2px;
+  margin: 45.5px 0 0 0;
+  box-sizing: border-box;
+
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.popap__save-button:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 620px) {
+  .popap__save-button {
+    font-size: 14px;
+    line-height: 17px;
+    height: 46px;
+  }
+}

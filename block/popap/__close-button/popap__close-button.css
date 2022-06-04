@@ -1,0 +1,27 @@
+.popap__close-button {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  right: -40px;
+  top: -40px;
+  background-image: url(/image/popap__close-button.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.popap__close-button:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 620px) {
+  .popap__close-button {
+    width: 20px;
+    height: 20px;
+    right: 0px;
+    top: -36px;
+  }
+}

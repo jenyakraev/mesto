@@ -1,0 +1,35 @@
+@import url(../vendor/normalize.css);
+
+@import url(../vendor/font/font.css);
+
+@import url(../block/body/body.css);
+
+@import url(../block/header/header.css);
+@import url(../block/header/__logo/header__logo.css);
+
+@import url(../block/profile/profile.css);
+@import url(../block/profile/__avatar/profile__avatar.css);
+@import url(../block/profile/__info/profile__info.css);
+@import url(../block/profile/__title/profile__title.css);
+@import url(../block/profile/__subtitle/profile__subtitle.css);
+@import url(../block/profile/__edit/profile__edit.css);
+@import url(../block/profile/__add/profile__add.css);
+
+@import url(../block/elements/elements.css);
+@import url(../block/element/element.css);
+@import url(../block/element/__image/element__image.css);
+@import url(../block/element/__title/element__title.css);
+@import url(../block/element/__like/element__like.css);
+
+@import url(../block/footer/footer.css);
+@import url(../block/footer/__copyrigth/footer__copyrigth.css);
+
+@import url(../block/popap/popap.css);
+@import url(../block/popap/_type/popap_type_opened.css);
+@import url(../block/popap/__container/popap__container.css);
+@import url(../block/popap/__close-button/popap__close-button.css);
+@import url(../block/popap/__form/popap__form.css);
+@import url(../block/popap/__header/popap__header.css);
+@import url(../block/popap/__title/popap__title.css);
+@import url(../block/popap/__subtitle/popap__subtitle.css);
+@import url(../block/popap/__save-button/popap__save-button.css);

@@ -1,0 +1,14 @@
+.popap__subtitle {
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 23px 0 0 0;
+  padding: 8px 0;
+
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popap__subtitle::placeholder {
+  color: rgba(0, 0, 0, 1);
+}

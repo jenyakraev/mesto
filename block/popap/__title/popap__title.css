@@ -1,0 +1,18 @@
+.popap__title {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 40px 0 0 0;
+  padding: 8px 0;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popap__title::placeholder {
+  color: rgba(0, 0, 0, 1);
+}
+
+@media screen and (max-width: 620px) {
+  .popap__title {
+    margin: 67px 0 0 0;
+  }
+}
