@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./page/index.css" />
-    <title>Mesto</title>
+    <title>Место</title>
   </head>
   <body class="body">
     <header class="header">
@@ -25,60 +25,72 @@
         <button class="profile__add" type="button"></button>
       </section>
       <section class="elements">
-        <div class="element">
+        <article class="element">
           <img
             class="element__image"
             alt="Калифорния"
             src="./image/element__image_california.jpg"
           />
-          <h2 class="element__title">Калифорния</h2>
-          <button class="element__like" type="button"></button>
-        </div>
-        <div class="element">
+          <div class="element__title-like">
+            <h2 class="element__title">Калифорния</h2>
+            <button class="element__like" type="button"></button>
+          </div>
+        </article>
+        <article class="element">
           <img
             class="element__image"
             alt="Бали"
             src="./image/element__image_bali.jpg"
           />
-          <h2 class="element__title">Бали</h2>
-          <button class="element__like" type="button"></button>
-        </div>
-        <div class="element">
+          <div class="element__title-like">
+            <h2 class="element__title">Бали</h2>
+            <button class="element__like" type="button"></button>
+          </div>
+        </article>
+        <article class="element">
           <img
             class="element__image"
             alt="Нью-Йорк"
             src="./image/element__image_nyc.jpg"
           />
-          <h2 class="element__title">Нью-Йорк</h2>
-          <button class="element__like" type="button"></button>
-        </div>
-        <div class="element">
+          <div class="element__title-like">
+            <h2 class="element__title">Нью-Йорк</h2>
+            <button class="element__like" type="button"></button>
+          </div>
+        </article>
+        <article class="element">
           <img
             class="element__image"
             alt="Скандинавия"
             src="./image/element__image_skandinavia.jpg"
           />
-          <h2 class="element__title">Скандинавия</h2>
-          <button class="element__like" type="button"></button>
-        </div>
-        <div class="element">
+          <div class="element__title-like">
+            <h2 class="element__title">Скандинавия</h2>
+            <button class="element__like" type="button"></button>
+          </div>
+        </article>
+        <article class="element">
           <img
             class="element__image"
             alt="Тенерифе"
             src="./image/element__image_tenerife.jpg"
           />
-          <h2 class="element__title">Тенерифе</h2>
-          <button class="element__like" type="button"></button>
-        </div>
-        <div class="element">
+          <div class="element__title-like">
+            <h2 class="element__title">Тенерифе</h2>
+            <button class="element__like" type="button"></button>
+          </div>
+        </article>
+        <article class="element">
           <img
             class="element__image"
             alt="Шри-Ланка"
             src="./image/element__image_sri-lanka.jpg"
           />
-          <h2 class="element__title">Шри-Ланка</h2>
-          <button class="element__like" type="button"></button>
-        </div>
+          <div class="element__title-like">
+            <h2 class="element__title">Шри-Ланка</h2>
+            <button class="element__like" type="button"></button>
+          </div>
+        </article>
       </section>
     </main>
     <footer class="footer">
@@ -90,14 +102,14 @@
         <form class="popap__form" id="form__edit" name="form__edit">
           <h3 class="popap__header">Редактировать профиль</h3>
           <input
-            class="popap__title"
+            class="popap__input popap__input_type_title"
             type="text"
             id="edit__title"
             name="title"
             value=""
           />
           <input
-            class="popap__subtitle"
+            class="popap__input popap__input_type_subtitle"
             type="text"
             id="edit__subtitle"
             name="subtitle"
@@ -107,6 +119,6 @@
         </form>
       </div>
     </div>
-    <script src="./page/index.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

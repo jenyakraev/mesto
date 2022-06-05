@@ -6,8 +6,8 @@ let profileTitle = document.querySelector(".profile__title");
 let profileSubtitle = document.querySelector(".profile__subtitle");
 
 let formElement = document.querySelector(".popap__form");
-let popapTitle = document.querySelector(".popap__title");
-let popapSubtitle = document.querySelector(".popap__subtitle");
+let popapTitle = document.querySelector(".popap__input_type_title");
+let popapSubtitle = document.querySelector(".popap__input_type_subtitle");
 
 function closePopap() {
   popap.classList.remove("popap_type_opened");
@@ -18,16 +18,6 @@ function openPopap() {
   popapTitle.value = profileTitle.textContent;
   popapSubtitle.value = profileSubtitle.textContent;
 }
-
-editButton.addEventListener("click", openPopap);
-
-popapCloseButton.addEventListener("click", closePopap);
-
-popap.addEventListener("click", function (e) {
-  if (e.target === e.currentTarget) {
-    closePopap();
-  }
-});
 
 function formSubmitHandler(e) {
   e.preventDefault();
@@ -42,3 +32,7 @@ function formSubmitHandler(e) {
 }
 
 formElement.addEventListener("submit", formSubmitHandler);
+
+editButton.addEventListener("click", openPopap);
+
+popapCloseButton.addEventListener("click", closePopap);
