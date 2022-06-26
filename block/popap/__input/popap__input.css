@@ -19,3 +19,7 @@
     margin: 67px 0 0 0;
   }
 }
+
+.popap__input::placeholder {
+  color: rgba(196, 196, 196, 1);
+}

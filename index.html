@@ -24,101 +24,85 @@
         </div>
         <button class="profile__add" type="button"></button>
       </section>
-      <section class="elements">
-        <article class="element">
-          <img
-            class="element__image"
-            alt="Калифорния"
-            src="./image/element__image_california.jpg"
-          />
-          <div class="element__title-like">
-            <h2 class="element__title">Калифорния</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img
-            class="element__image"
-            alt="Бали"
-            src="./image/element__image_bali.jpg"
-          />
-          <div class="element__title-like">
-            <h2 class="element__title">Бали</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img
-            class="element__image"
-            alt="Нью-Йорк"
-            src="./image/element__image_nyc.jpg"
-          />
-          <div class="element__title-like">
-            <h2 class="element__title">Нью-Йорк</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img
-            class="element__image"
-            alt="Скандинавия"
-            src="./image/element__image_skandinavia.jpg"
-          />
-          <div class="element__title-like">
-            <h2 class="element__title">Скандинавия</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img
-            class="element__image"
-            alt="Тенерифе"
-            src="./image/element__image_tenerife.jpg"
-          />
-          <div class="element__title-like">
-            <h2 class="element__title">Тенерифе</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img
-            class="element__image"
-            alt="Шри-Ланка"
-            src="./image/element__image_sri-lanka.jpg"
-          />
-          <div class="element__title-like">
-            <h2 class="element__title">Шри-Ланка</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </article>
-      </section>
+      <section class="elements"></section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
     </footer>
-    <div class="popap">
+
+    <div class="popap popap_edit">
       <div class="popap__container">
-        <button class="popap__close-button" type="button"></button>
-        <form class="popap__form" id="form__edit" name="form__edit">
+        <button
+          class="popap__close-button popap__close-button_edit"
+          type="button"
+        ></button>
+        <form class="popap__form popap__form_edit" name="form_edit">
           <h3 class="popap__header">Редактировать профиль</h3>
           <input
-            class="popap__input popap__input_type_title"
+            class="popap__input popap__input_title"
             type="text"
-            id="edit__title"
             name="title"
-            value=""
           />
           <input
-            class="popap__input popap__input_type_subtitle"
+            class="popap__input popap__input_subtitle"
             type="text"
-            id="edit__subtitle"
             name="subtitle"
-            value=""
           />
           <button class="popap__save-button" type="submit">Сохранить</button>
         </form>
       </div>
     </div>
+
+    <div class="popap popap_add">
+      <div class="popap__container">
+        <button
+          class="popap__close-button popap__close-button_add"
+          type="button"
+        ></button>
+        <form class="popap__form popap__form_add" name="form_add">
+          <h3 class="popap__header">Новое место</h3>
+          <input
+            class="popap__input popap__input_place"
+            type="text"
+            name="place"
+            placeholder="Название"
+          />
+          <input
+            class="popap__input popap__input_url"
+            type="text"
+            id="popap__input_url"
+            name="url"
+            placeholder="Ссылка на картинку"
+          />
+          <button class="popap__save-button" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popap popap_image">
+      <figure class="popap__figure">
+        <button
+          class="popap__close-button popap__close-button_image"
+          type="button"
+        ></button>
+        <img
+          class="popap__img"
+          src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg"
+        />
+        <figcaption class="popap__title-place">Челяба</figcaption>
+      </figure>
+    </div>
+
+    <template class="item_template">
+      <article class="element">
+        <button class="element__trash"></button>
+        <img class="element__image" />
+        <div class="element__title-like">
+          <h2 class="element__title"></h2>
+          <button class="element__like"></button>
+        </div>
+      </article>
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
