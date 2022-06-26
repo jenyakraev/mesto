@@ -1,4 +1,4 @@
-.popap__save-button {
+.popup__save-button {
   height: 50px;
   cursor: pointer;
   border: none;
@@ -12,12 +12,12 @@
   line-height: 22px;
 }
 
-.popap__save-button:hover {
+.popup__save-button:hover {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 620px) {
-  .popap__save-button {
+  .popup__save-button {
     font-size: 14px;
     line-height: 17px;
     height: 46px;

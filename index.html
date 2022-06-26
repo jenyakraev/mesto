@@ -30,63 +30,63 @@
       <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
     </footer>
 
-    <div class="popap popap_edit">
-      <div class="popap__container">
+    <div class="popup popup_edit">
+      <div class="popup__container">
         <button
-          class="popap__close-button popap__close-button_edit"
+          class="popup__close-button popup__close-button_edit"
           type="button"
         ></button>
-        <form class="popap__form popap__form_edit" name="form_edit">
-          <h3 class="popap__header">Редактировать профиль</h3>
+        <form class="popup__form popup__form_edit" name="form_edit">
+          <h3 class="popup__header">Редактировать профиль</h3>
           <input
-            class="popap__input popap__input_title"
+            class="popup__input popup__input_title"
             type="text"
             name="title"
           />
           <input
-            class="popap__input popap__input_subtitle"
+            class="popup__input popup__input_subtitle"
             type="text"
             name="subtitle"
           />
-          <button class="popap__save-button" type="submit">Сохранить</button>
+          <button class="popup__save-button" type="submit">Сохранить</button>
         </form>
       </div>
     </div>
 
-    <div class="popap popap_add">
-      <div class="popap__container">
+    <div class="popup popup_add">
+      <div class="popup__container">
         <button
-          class="popap__close-button popap__close-button_add"
+          class="popup__close-button popup__close-button_add"
           type="button"
         ></button>
-        <form class="popap__form popap__form_add" name="form_add">
-          <h3 class="popap__header">Новое место</h3>
+        <form class="popup__form popup__form_add" name="form_add">
+          <h3 class="popup__header">Новое место</h3>
           <input
-            class="popap__input popap__input_place"
+            class="popup__input popup__input_place"
             type="text"
             name="place"
             placeholder="Название"
           />
           <input
-            class="popap__input popap__input_url"
+            class="popup__input popup__input_url"
             type="text"
-            id="popap__input_url"
+            id="popup__input_url"
             name="url"
             placeholder="Ссылка на картинку"
           />
-          <button class="popap__save-button" type="submit">Создать</button>
+          <button class="popup__save-button" type="submit">Создать</button>
         </form>
       </div>
     </div>
 
-    <div class="popap popap_image">
-      <figure class="popap__figure">
+    <div class="popup popup_image">
+      <figure class="popup__figure">
         <button
-          class="popap__close-button popap__close-button_image"
+          class="popup__close-button popup__close-button_image"
           type="button"
         ></button>
-        <img class="popap__img" src="img" />
-        <figcaption class="popap__title-place"></figcaption>
+        <img class="popup__img" src="img" />
+        <figcaption class="popup__title-place"></figcaption>
       </figure>
     </div>
 
@@ -100,6 +100,7 @@
         </div>
       </article>
     </template>
+    <script src="./scripts/initial-сards.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

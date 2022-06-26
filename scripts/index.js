@@ -1,83 +1,56 @@
-const initialCards = [
-  {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-  },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  },
-];
-
 const editButton = document.querySelector(".profile__edit");
-const popapEdit = document.querySelector(".popap_edit");
-const popapEditCloseButton = document.querySelector(
-  ".popap__close-button_edit"
+const popupEdit = document.querySelector(".popup_edit");
+const popupEditCloseButton = document.querySelector(
+  ".popup__close-button_edit"
 );
 const profileTitle = document.querySelector(".profile__title");
 const profileSubtitle = document.querySelector(".profile__subtitle");
-const popapFormEdit = document.querySelector(".popap__form_edit");
-const popapInputTitle = document.querySelector(".popap__input_title");
-const popapInputSubtitle = document.querySelector(".popap__input_subtitle");
+const popupFormEdit = document.querySelector(".popup__form_edit");
+const popupInputTitle = document.querySelector(".popup__input_title");
+const popupInputSubtitle = document.querySelector(".popup__input_subtitle");
 
 //Закрытие попапа профиля
-function closePopapEdit() {
-  popapEdit.classList.remove("popap_opened");
+function closePopupEdit() {
+  popupEdit.classList.remove("popup_opened");
 }
 
 //Открытие попапа профиля
-function openPopapEdit() {
-  popapEdit.classList.add("popap_opened");
-  popapInputTitle.value = profileTitle.textContent;
-  popapInputSubtitle.value = profileSubtitle.textContent;
+function openPopupEdit() {
+  popupEdit.classList.add("popup_opened");
+  popupInputTitle.value = profileTitle.textContent;
+  popupInputSubtitle.value = profileSubtitle.textContent;
 }
 
 //Сохранение попапа профиля
-function formSubmitHandler(e) {
+function submitEditProfileForm(e) {
   e.preventDefault();
-  profileTitle.textContent = popapInputTitle.value;
-  profileSubtitle.textContent = popapInputSubtitle.value;
-  closePopapEdit();
+  profileTitle.textContent = popupInputTitle.value;
+  profileSubtitle.textContent = popupInputSubtitle.value;
+  closePopupEdit();
 }
 
-popapFormEdit.addEventListener("submit", formSubmitHandler);
-editButton.addEventListener("click", openPopapEdit);
-popapEditCloseButton.addEventListener("click", closePopapEdit);
+popupFormEdit.addEventListener("submit", submitEditProfileForm);
+editButton.addEventListener("click", openPopupEdit);
+popupEditCloseButton.addEventListener("click", closePopupEdit);
 
 const addButton = document.querySelector(".profile__add");
-const popapAdd = document.querySelector(".popap_add");
-const popapAddCloseButton = document.querySelector(".popap__close-button_add");
+const popupAdd = document.querySelector(".popup_add");
+const popupAddCloseButton = document.querySelector(".popup__close-button_add");
 
 //Закрытие попапа добавления
-function closePopapAdd() {
-  popapAdd.classList.remove("popap_opened");
+function closePopupAdd() {
+  popupAdd.classList.remove("popup_opened");
 }
 
 //Открытие попапа добавления
-function openPopapAdd() {
-  popapAdd.classList.add("popap_opened");
+function openPopupAdd() {
+  popupAdd.classList.add("popup_opened");
 }
 
-addButton.addEventListener("click", openPopapAdd);
-popapAddCloseButton.addEventListener("click", closePopapAdd);
+addButton.addEventListener("click", openPopupAdd);
+popupAddCloseButton.addEventListener("click", closePopupAdd);
 
-const popapFormAdd = document.querySelector(".popap__form_add");
+const popupFormAdd = document.querySelector(".popup__form_add");
 const elements = document.querySelector(".elements");
 const itemTemplate = document.querySelector(".item_template").content;
 const elementImage = document.querySelector(".element__image");
@@ -86,14 +59,20 @@ const elementLike = document.querySelector(".element__like");
 const elementLikeActive = document.querySelector(".element__like_active");
 
 const element = document.querySelector(".element");
+const popupImg = document.querySelector(".popup__img");
+const popupTitlePlace = document.querySelector(".popup__title-place");
+
+const popupInputPlace = document.querySelector(".popup__input_place");
+const popupInputUrl = document.querySelector(".popup__input_url");
 
 //Добавляем карточку
 function renderItem(item) {
   const newCard = itemTemplate.cloneNode(true);
+  const newCardElementImage = newCard.querySelector(".element__image");
 
   newCard.querySelector(".element__title").innerText = item.name;
-  newCard.querySelector(".element__image").src = item.link;
-  newCard.querySelector(".element__image").alt = item.name;
+  newCardElementImage.src = item.link;
+  newCardElementImage.alt = item.name;
 
   newCard
     .querySelector(".element__like")
@@ -109,48 +88,46 @@ function renderItem(item) {
       element.remove();
     });
 
-  newCard
-    .querySelector(".element__image")
-    .addEventListener("click", function () {
-      const popapImg = document.querySelector(".popap__img");
-      const popapTitlePlace = document.querySelector(".popap__title-place");
-      popapImg.src = item.link;
-      popapImg.alt = item.name;
-      popapTitlePlace.textContent = item.name;
-      openPopapImage();
-    });
+  newCardElementImage.addEventListener("click", function () {
+    popupImg.src = item.link;
+    popupImg.alt = item.name;
+    popupTitlePlace.textContent = item.name;
+    openPopupImage();
+  });
 
-  elements.prepend(newCard);
+  addCard(newCard);
+}
+
+function addCard(item) {
+  elements.prepend(item);
 }
 
 //Создаем карточку
-function createItem(e) {
+function submitAddCardForm(e) {
   e.preventDefault();
-  const popapInputPlace = document.querySelector(".popap__input_place").value;
-  const popapInputUrl = document.querySelector(".popap__input_url").value;
-  const cardData = { name: popapInputPlace, link: popapInputUrl };
+  const cardData = { name: popupInputPlace.value, link: popupInputUrl.value };
 
   renderItem(cardData);
 
-  closePopapAdd();
+  closePopupAdd();
 }
 
-const popapImage = document.querySelector(".popap_image");
-const popapImageCloseButton = document.querySelector(
-  ".popap__close-button_image"
+const popupImage = document.querySelector(".popup_image");
+const popupImageCloseButton = document.querySelector(
+  ".popup__close-button_image"
 );
 
 //Закрытие попапа картинки
-function closePopapImage() {
-  popapImage.classList.remove("popap_opened");
+function closePopupImage() {
+  popupImage.classList.remove("popup_opened");
 }
 
 //Открытие попапа картинки
-function openPopapImage() {
-  popapImage.classList.add("popap_opened");
+function openPopupImage() {
+  popupImage.classList.add("popup_opened");
 }
 
-popapImageCloseButton.addEventListener("click", closePopapImage);
+popupImageCloseButton.addEventListener("click", closePopupImage);
 
-popapFormAdd.addEventListener("submit", createItem);
+popupFormAdd.addEventListener("submit", submitAddCardForm);
 initialCards.forEach(renderItem);
