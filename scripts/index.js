@@ -66,7 +66,7 @@ const popupInputPlace = document.querySelector(".popup__input_place");
 const popupInputUrl = document.querySelector(".popup__input_url");
 
 //Добавляем карточку
-function renderItem(item) {
+function createCard(item) {
   const newCard = itemTemplate.cloneNode(true);
   const newCardElementImage = newCard.querySelector(".element__image");
 
@@ -94,21 +94,18 @@ function renderItem(item) {
     popupTitlePlace.textContent = item.name;
     openPopupImage();
   });
-
-  addCard(newCard);
+  return newCard;
 }
-
 function addCard(item) {
   elements.prepend(item);
 }
+debugger;
 
-//Создаем карточку
 function submitAddCardForm(e) {
   e.preventDefault();
   const cardData = { name: popupInputPlace.value, link: popupInputUrl.value };
 
-  renderItem(cardData);
-
+  addCard(createCard(cardData));
   closePopupAdd();
 }
 
@@ -130,4 +127,7 @@ function openPopupImage() {
 popupImageCloseButton.addEventListener("click", closePopupImage);
 
 popupFormAdd.addEventListener("submit", submitAddCardForm);
-initialCards.forEach(renderItem);
+
+initialCards.forEach((item) => {
+  addCard(createCard(item));
+});
