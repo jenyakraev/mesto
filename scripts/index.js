@@ -9,46 +9,14 @@ const popupFormEdit = document.querySelector(".popup__form_edit");
 const popupInputTitle = document.querySelector(".popup__input_title");
 const popupInputSubtitle = document.querySelector(".popup__input_subtitle");
 
-//Закрытие попапа профиля
-function closePopupEdit() {
-  popupEdit.classList.remove("popup_opened");
-}
-
-//Открытие попапа профиля
-function openPopupEdit() {
-  popupEdit.classList.add("popup_opened");
-  popupInputTitle.value = profileTitle.textContent;
-  popupInputSubtitle.value = profileSubtitle.textContent;
-}
-
-//Сохранение попапа профиля
-function submitEditProfileForm(e) {
-  e.preventDefault();
-  profileTitle.textContent = popupInputTitle.value;
-  profileSubtitle.textContent = popupInputSubtitle.value;
-  closePopupEdit();
-}
-
-popupFormEdit.addEventListener("submit", submitEditProfileForm);
-editButton.addEventListener("click", openPopupEdit);
-popupEditCloseButton.addEventListener("click", closePopupEdit);
+const popupImage = document.querySelector(".popup_image");
+const popupImageCloseButton = document.querySelector(
+  ".popup__close-button_image"
+);
 
 const addButton = document.querySelector(".profile__add");
 const popupAdd = document.querySelector(".popup_add");
 const popupAddCloseButton = document.querySelector(".popup__close-button_add");
-
-//Закрытие попапа добавления
-function closePopupAdd() {
-  popupAdd.classList.remove("popup_opened");
-}
-
-//Открытие попапа добавления
-function openPopupAdd() {
-  popupAdd.classList.add("popup_opened");
-}
-
-addButton.addEventListener("click", openPopupAdd);
-popupAddCloseButton.addEventListener("click", closePopupAdd);
 
 const popupFormAdd = document.querySelector(".popup__form_add");
 const elements = document.querySelector(".elements");
@@ -64,6 +32,28 @@ const popupTitlePlace = document.querySelector(".popup__title-place");
 
 const popupInputPlace = document.querySelector(".popup__input_place");
 const popupInputUrl = document.querySelector(".popup__input_url");
+
+//Сохранение попапа профиля
+function submitEditProfileForm(e) {
+  e.preventDefault();
+  profileTitle.textContent = popupInputTitle.value;
+  profileSubtitle.textContent = popupInputSubtitle.value;
+  closePopup(popupEdit);
+}
+
+function openPopupEdit(item) {
+  openPopup(item);
+  popupInputTitle.value = profileTitle.textContent;
+  popupInputSubtitle.value = profileSubtitle.textContent;
+}
+
+function openPopup(item) {
+  item.classList.add("popup_opened");
+}
+
+function closePopup(item) {
+  item.classList.remove("popup_opened");
+}
 
 //Добавляем карточку
 function createCard(item) {
@@ -92,39 +82,44 @@ function createCard(item) {
     popupImg.src = item.link;
     popupImg.alt = item.name;
     popupTitlePlace.textContent = item.name;
-    openPopupImage();
+    openPopup(popupImage);
   });
   return newCard;
 }
 function addCard(item) {
   elements.prepend(item);
 }
-debugger;
 
 function submitAddCardForm(e) {
   e.preventDefault();
   const cardData = { name: popupInputPlace.value, link: popupInputUrl.value };
 
   addCard(createCard(cardData));
-  closePopupAdd();
+  popupInputPlace.value = "";
+  popupInputUrl.value = "";
+  closePopup(popupAdd);
 }
 
-const popupImage = document.querySelector(".popup_image");
-const popupImageCloseButton = document.querySelector(
-  ".popup__close-button_image"
-);
+popupFormEdit.addEventListener("submit", submitEditProfileForm);
 
-//Закрытие попапа картинки
-function closePopupImage() {
-  popupImage.classList.remove("popup_opened");
-}
+editButton.addEventListener("click", () => {
+  openPopupEdit(popupEdit);
+});
 
-//Открытие попапа картинки
-function openPopupImage() {
-  popupImage.classList.add("popup_opened");
-}
+popupEditCloseButton.addEventListener("click", () => {
+  closePopup(popupEdit);
+});
 
-popupImageCloseButton.addEventListener("click", closePopupImage);
+addButton.addEventListener("click", () => {
+  openPopup(popupAdd);
+});
+popupAddCloseButton.addEventListener("click", () => {
+  closePopup(popupAdd);
+});
+
+popupImageCloseButton.addEventListener("click", () => {
+  closePopup(popupImage);
+});
 
 popupFormAdd.addEventListener("submit", submitAddCardForm);
 
