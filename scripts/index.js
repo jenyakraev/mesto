@@ -41,8 +41,8 @@ function submitEditProfileForm(e) {
   closePopup(popupEdit);
 }
 
-function openPopupEdit(item) {
-  openPopup(item);
+function openPopupEdit() {
+  openPopup(popupEdit);
   popupInputTitle.value = profileTitle.textContent;
   popupInputSubtitle.value = profileSubtitle.textContent;
 }
@@ -72,10 +72,8 @@ function createCard(item) {
 
   newCard
     .querySelector(".element__trash")
-    .addEventListener("click", function () {
-      const elementTrash = document.querySelector(".element__trash");
-      const element = elementTrash.closest(".element");
-      element.remove();
+    .addEventListener("click", function (evt) {
+      evt.target.closest(".element").remove();
     });
 
   newCardElementImage.addEventListener("click", function () {
@@ -102,9 +100,7 @@ function submitAddCardForm(e) {
 
 popupFormEdit.addEventListener("submit", submitEditProfileForm);
 
-editButton.addEventListener("click", () => {
-  openPopupEdit(popupEdit);
-});
+editButton.addEventListener("click", openPopupEdit);
 
 popupEditCloseButton.addEventListener("click", () => {
   closePopup(popupEdit);
