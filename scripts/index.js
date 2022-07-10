@@ -1,4 +1,4 @@
-const editButton = document.querySelector(".profile__edit");
+const buttonProfileEdit = document.querySelector(".profile__edit");
 const popupEdit = document.querySelector(".popup_edit");
 const popupEditCloseButton = document.querySelector(
   ".popup__close-button_edit"
@@ -14,7 +14,7 @@ const popupImageCloseButton = document.querySelector(
   ".popup__close-button_image"
 );
 
-const addButton = document.querySelector(".profile__add");
+const buttonProfileAdd = document.querySelector(".profile__add");
 const popupAdd = document.querySelector(".popup_add");
 const popupAddCloseButton = document.querySelector(".popup__close-button_add");
 
@@ -50,10 +50,20 @@ function openPopupEdit() {
 
 function openPopup(item) {
   item.classList.add("popup_opened");
+  document.addEventListener("keyup", closePopupEsc);
 }
 
 function closePopup(item) {
   item.classList.remove("popup_opened");
+  document.removeEventListener("keyup", closePopupEsc);
+}
+
+function closePopupEsc(evt) {
+  if (evt.key === "Escape") {
+    popups.forEach((popup) => {
+      popup.classList.remove("popup_opened");
+    });
+  }
 }
 
 function createCard(item) {
@@ -98,13 +108,6 @@ function submitAddCardForm(e) {
   closePopup(popupAdd);
 }
 
-function closePopupEsc(evt) {
-  if (evt.key === "Escape") {
-    const popapOpened = document.querySelector(".popup_opened");
-    popapOpened.classList.remove("popup_opened");
-  }
-}
-
 popups.forEach((item) => {
   item.addEventListener("click", (evt) => {
     if (evt.target === evt.currentTarget) {
@@ -121,17 +124,15 @@ const clearPopupAdd = () => {
   popupInputUrl.value = "";
 };
 
-document.addEventListener("keyup", closePopupEsc);
-
 popupFormEdit.addEventListener("submit", submitEditProfileForm);
 
-editButton.addEventListener("click", openPopupEdit);
+buttonProfileEdit.addEventListener("click", openPopupEdit);
 
 popupEditCloseButton.addEventListener("click", () => {
   closePopup(popupEdit);
 });
 
-addButton.addEventListener("click", () => {
+buttonProfileAdd.addEventListener("click", () => {
   clearPopupAdd();
   openPopup(popupAdd);
 });
